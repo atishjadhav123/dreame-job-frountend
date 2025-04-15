@@ -6,12 +6,16 @@ export const jobApi = createApi({
         baseUrl: `${import.meta.env.VITE_BACKEND_URL}/api/job`,
         credentials: "include",
         prepareHeaders: (headers) => {
-            const token = localStorage.getItem("token")
+            const user = JSON.parse(localStorage.getItem("user"));
+            const token = user?.token;
+
             if (token) {
-                headers.set("Authorization", `Bearer ${token}`)
+                headers.set("Authorization", `Bearer ${token}`);
             }
-            return headers
+
+            return headers;
         }
+
     }),
     tagTypes: ["job"],
     endpoints: (builder) => {
