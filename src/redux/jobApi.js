@@ -10,7 +10,7 @@ export const jobApi = createApi({
             const token = user?.token;
 
             if (token) {
-                headers.set("Authorization", `Bearer ${token}`);
+                headers.set("Authorization", `Bearer ${token}`)
             }
 
             return headers;

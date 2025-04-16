@@ -17,7 +17,7 @@ export const applyjobApi = createApi({
         }),
         getApplicants: builder.query({
             query: (id) => ({
-                url: `/${id}/aplicants`,
+                url: `/${id}/applicants`,
                 method: "GET",
             }),
             providesTags: ["applicants"],
